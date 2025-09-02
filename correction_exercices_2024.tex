@@ -34,30 +34,68 @@ Dans cette partie, le terme domaine d'holomorphie désigne le plus grand ouvert
 dans lequel une application est holomorphe.
 \begin{enumerate}
 \item Quel est le domaine d'holomorphie de $f : z \mapsto z^4$ ?
+Il s'agit d'une application polynôme, donc le domaine d'holomorphie est $\mathbb{C}$.
 \item Quel est le domaine d'holomorphie de $f : z \mapsto |z|$ ?
-\item)Quel est le domaine d'holomorphie de $f : z \mapsto 1/ \cos(z)$ ?
+Les conditions de Cauchy donnent $\partial_{\overline{z}}|z| = z / 2 |z| = 0$. Cette égalité ne pouvant être satisfaite qu'en $z=0$, 
+on en déduit que le domaine d'holomorphie est vide.
+\item Quel est le domaine d'holomorphie de $f : z \mapsto 1/ \cos(z)$ ?
+Le quotient de deux applications holomorphes est holomorphe en tout point où le dénominateur ne s'annule pas. On en déduit que le domaine 
+d'holomorphie est 
+\[\mathbb{C} \setminus \{ \frac{\pi}{2} + n \pi, n \in \mathbb{Z}\} .\]
 \item Quel est le domaine d'holomorphie de $f : z \mapsto 1/(1 + z^2 )$ ?
+Toujours le quotient de deux applications holomorphes, donc le domaine d'holomorphie est :
+\[
+\mathbb{C} \setminus \{i, -i\}.
+\]
 \item Quel est le domaine d'holomorphie de $f : z \mapsto e^z /(1 + z^2 )$ ?
+Réponse identique à la question précédente, le domaine d'holomorphie est :
+\[
+\mathbb{C} \setminus \{i, -i\}.
+\]
 \item L'application $z \mapsto z\overline{z}$ est-elle holomorphe en $z = 1$ ?
+Les conditions de Cauchy donnent $\partial_{\overline{z}} z \overline{z} = z$ qui vaut $1$ en $z=1.$ L'application ne peut
+donc être holomorphe en $z=1.$
 \item Expliquer pourquoi l'application $z \mapsto z^2$ est holomorphe dans $\C$ et donner
 sa dérivée.
+Toute application polynôme est holomorphe dans $\C.$ Sa dérivée est $2z.$
 \item Si $f, g$ sont deux applications holomorphes dans $\C$ , l'application $f.g$ est-elle
 holomorphe ? Quelle est sa dérivée ?
+L'application $fg$ est holomorphe dans $\C$ selon un théorème du cours. On a:
+\[
+\left( fg \right)^\prime = f^\prime g + f g^\prime.
+\]
 \item Si $f, g$ sont deux applications holomorphes dans $\C$ , l'application composée
 $f \circ g$ est-elle holomorphe ? Quelle est sa dérivée ?
-\item Si $f, g$ sont deux applications holomorphes dans $\C$, en quels points l'appli-
-cation $f /g$ est-elle holomorphe ? Quelle est sa dérivée ?
+Il s'agit du théorème des applications composées. $fg$ est dérivable, de dérivée:
+\[
+(fg)^\prime(z) = f^\prime\left( g(z) \right) g^\prime(z).
+\]
+\item Si $f, g$ sont deux applications holomorphes dans $\C$, en quels points l'application $f /g$ est-elle holomorphe ? 
+Quelle est sa dérivée ?
+Le quotient de deux applications holomorphes est holomorphe en tout point où le dénominateur ne s'annule pas. On a alors:
+\[
+\left( \frac{f}{g} \right)^\prime(z) = \frac{f^\prime(z)g(z) - g^\prime(z)f(z)}{g^2(z)}.
+\]
 \end{enumerate}
 \subsection{Thème séries entières et fonctions analytiques}
 \begin{enumerate}
 \item Enoncer le critère de d'Alembert pour une série de terme général $a_n$.
-\item A l'intérieur de son disque ouvert de convergence, une application définie
+Si la limite : 
+\[
+\lim_{n \to +\infty} \frac{|a_{n+1}|}{|a_n|} = l
+\]
+existe, alors $R = l^{-1}.$
+\item À l'intérieur de son disque ouvert de convergence, une application définie
 par une série entière est-elle holomorphe ? Si oui, comment exprime-t-on sa
 dérivée ?
+À l'intérieur de son disque ouvert de convergence, une application définie par une série entière
+est holomorphe. Sa dérivée s'obtient en dérivant terme à terme la série initiale.
 \item Quel est le rayon de convergence de la série $\sum_{n \geq 0} x^n / n!$ ?
 \item Quel est le rayon de convergence de la série $\sum_{n \geq 0} (-1)^n x^n / n!$ ?
-\item
+Les deux questions ont la même réponse par le critère de d'Alembert: le rayon de convergence est infini.
 \item Énoncer le théorème des zéros isolés.
+Soit $\Omega \subset \C$ un domaine et $f \colon \Omega \to \C$ analytique. Alors, si $f$ n'est pas identiquement nulle, l'ensemble de ses
+zéros est formé de points isolés.
 \end{enumerate}
 \subsection{Thème formule de Cauchy}
 \begin{enumerate}
@@ -65,44 +103,73 @@ dérivée ?
 	\[
 	\int_\gamma \frac{dz}{z} \quad ?
 	\] 
+    L'application constante $f \colon z \mapsto 1$ est holomorphe dans $\C.$ Par la première formule de Cauchy, l'intégrale vaut:
+    \[
+    i2\pi.
+    \]
 	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto e^{it}$ . Que vaut :
 	\[
 	\int_\gamma \frac{\sin z}{z} dz \quad ?
 	\] 
+    L'application se prolonge en une application holomorphe dans $\C$ (le point singulier $0$ est artificiel). On en déduit que l'intégrale est nulle.
 	\item Soit $\gamma$ un lacet simple de classe $C^1$ . Soit $f$ une application holomorphe dans
 	$\C$ . Que vaut :
 		\[
 	\int_\gamma f(z) dz \quad ?
 	\] 
+    L'intégrale d'une application holomorphe le long d'un lacet d'un domaine simplement connexe est nulle.
 	\item Soit  $\gamma$  un lacet simple de classe $C^1$ ne passant pas par $z_0 \in \C$ . Soit $f$ une
 	application holomorphe dans C . Que vaut :
 	\[
 \int_\gamma \frac{f(z)}{z-z_0} dz \quad ?
 \] 
+    C'est la première formule de Cauchy, l'intégrale vaut $i 2 \pi f(z_0).$
 		\item Soit  $\gamma$  un lacet simple de classe $C^1$ ne passant pas par $z_0 \in \C$ . Soit $f$ une
 	application holomorphe dans C . Que vaut :
 	\[
 	\int_\gamma \frac{f(z)}{(z-z_0)^2} dz \quad ?
-	\] 
+	\]
+
+    C'est la seconde formule de Cauchy, l'intégrale vaut $i 2 \pi f^\prime(z_0).$
 \end{enumerate}
 \subsection{Thème série de Laurent et résidus}
 \begin{enumerate}
 	\item Donner le développement en série de Laurent de $z \mapsto e^z$ au voisinage de 0.
+    Par unicité du développement, c'est:
+    \[
+    \sum_{n \geq 0} \frac{z^n}{n!}.
+    \]
 	\item Donner le développement en série de Laurent de $z \mapsto 1+z+z^{-1}$ au voisinage de 0.
+	Toujours par unicité, c'est tout simplement :
+    \[
+    1+z+z^{-1}
+    \]
 	\item Enoncer le théorème des résidus.
+	Voir cours.
 	\item Quel est le résidu en 0 de l'application $z \mapsto cos(z)/z$ ?
+	$0$ est un pôle simple. La formule permettant d'obtenir le résidu d'un quotient de deux applications holomorphes donne $\cos(0) = 1.$
 	\item Quel est le résidu en $i$ de l'application $z \mapsto 1/(1 + z^2 )$ ?
+    $i$ est un pôle simple. Le résidu est $1/2i = -i/2.$
 	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto 2e^{it}$ . Que vaut :
 \[
 \int_{\gamma} \frac{e^z}{1+z^2}dz\quad ?
 \]
+    L'application intégrée possède deux points singuliers $i,-i$ qui sont des pôles simples. Les résidus en ces points sont respectivement :
+    \[
+    e^i/2i, -e^{-i}/2i.
+    \]
+    En appliquant le théorème des résidus, on en déduit que l'intégrale vaut:
+    \[
+    i 2 \pi \sin (1).
+    \]
 	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto 2e^{it}$ . Que vaut :
 	\[
 	\int_{\gamma} \frac{z}{1+z}dz\quad ?
 	\]
+    Le seul point singulier est $z=-1$, son résidu est $-1.$ L'intégrale a pour valeur $-i2 \pi.$
 \end{enumerate}
 \section{Exercices vus en cours}
-Si $f$ est une application intégrable telle que:
+Si $f$ est une application mesurable telle que:
 \[
 \int_\R \left | f(t) \right| dt < +\infty
 \]

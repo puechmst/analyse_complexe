@@ -121,6 +121,44 @@ Nous reconnaissons :
 \end{itemize} 
 
 Ainsi, l'intégrale complexe regroupe ces deux termes très utilisés en physique. Notons aussi l'interprétation possible d'une fonction complexe en termes de champ de vecteurs dans $\R^2.$
+
+\begin{fprop}[changement de paramétrage]
+Soit $\gamma \colon [a,b] \to \C$ un chemin de classe $C^1$ de $\C$ et $\phi \colon [c,d] \to [a,b]$ un difféomorphisme croissant de classe $C^1$. 
+Pour toute application continue $f$ définie sur un ouvert contenant $\gamma\left( [a,b] \right):$
+\[
+\int_{\gamma} f(z) dz = \int_{\gamma \circ \phi} f(z) dz.
+\]
+\end{fprop}
+\begin{proof}
+Par définition:
+\[
+\begin{split}
+\int_{\gamma \circ \phi} f(z) dz &= \int_c^d \left( \gamma \circ \phi \right)^\prime (t) f\left( \gamma \circ \phi(t) \right) dt \\
+&= \int_c^d \gamma^\prime \left( \phi(t)) \right) \phi^\prime(t) f\left( \gamma \circ \phi(t) \right) dt \\
+\end{split}
+\]
+Le changement de variable $u=\phi(t)$ donne alors directement:
+\[
+\int_c^d \gamma^\prime \left( \phi(t)) \right) \phi^\prime(t) f\left( \gamma \circ \phi(t) \right) dt  = 
+\int_a^b \gamma^\prime(u) f\left( \gamma(u) \right) du = \int_{\gamma} f(z) dz.
+\]
+\end{proof}
+Si le difféomorphisme $\phi$ est décroissant, le signe de l'intégrale est inversé. On en déduit la proposition suivante:
+\begin{fprop}
+Soit $\gamma \colon [a,b] \to \C$ un chemin de classe $C^1$ et $f$ une application continue sur un ouvert contenant $\gamma\left( [a,b] \right).$
+On a:
+\[
+\int_{-\gamma} f(z) dz = - \int_\gamma f(z) dz.
+\]
+\end{fprop}
+Le définition suivante permet d'étendre les intégrales aux chemins de classe $C^1$ par morceaux.
+\begin{fdefn}[Relation de Chasles]
+Soient $\gamma^1, \gamma_2$ deux chemins de classe $C^1$ composables et $f$ une application continue définie sur un ouvert 
+contenant l'image de $\gamma_2 + \gamma_1.$ On pose:
+\[
+\int_{\gamma_2 + \gamma_1} f(z) dz = \int_{\gamma_1} f(z) dz + \int_{\gamma_2} f(z) dz.
+\]
+\end{fdefn}
 \begin{fprop}[Changement de variable]
 \label{prop:changement_variable}
 Soit $U$ un ouvert de $\C$, $\gamma \colon [a,b] \to U$ un chemin de classe $C^1$ et $\phi$ un $C^1$-difféomorphisme de $U$ sur $\phi(U)$. Pour $f$ application continue définie sur $\phi(U)$ on a:
@@ -140,7 +178,6 @@ Soit $U$ un ouvert de $\C$, $\gamma \colon [a,b] \to U$ un chemin de classe $C^1
 \int_{\gamma} f \circ \phi (z) \phi^\prime(z) dz = \int_a^b f \circ \phi \left( \gamma(t) \right)\left( \phi \circ \gamma \right)^\prime(t) dt = \int_{\phi \circ \gamma} f(z) dz
     \]
 \end{proof}
-
 \begin{fprop}
 Soit $U$ un ouvert de $\C$ et soit $F \colon U \to \C$ une application holomorphe de dérivée continue $f$. Soit $\gamma \colon [a,b] \to U$ un chemin de classe $C^1$. On a:
 \[
@@ -157,6 +194,20 @@ et d'appliquer la formule de la définition \ref{def:integration_chemin}.
 \begin{rem}
 L'application $F$ est appelée une primitive de $f$. Elle est définie à une constante additive près. On remarque que lorsqu'une application continue admet une primitive, son intégrale sur tout lacet contenu dans $U$ est nulle. 
 \end{rem}
+\begin{exercice}
+Soit le contour $\gamma = \gamma_4 + \gamma_3 + \gamma_2 + \gamma_1$ donné en figure \ref{fig:carre}. En utilisant la relation de Chasles,
+calculer les intégrales:
+\[
+\int_\gamma z dz , \, \int_\gamma z^{-1} dz.
+\]
+Les résultats obtenus sont-ils conformes à ce que l'on attend ?
+\end{exercice}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5]{carre.pdf}
+  \caption{Contour intégration exercice \arabic{ExoCtr}} \label{fig:carre}
+\end{figure}
+
 En analyse complexe, il est commode d'introduire la longueur d'arc infinitésimale $ds = \lvert \diff z \rvert =\lvert\gamma^\prime(t)\rvert\diff t$ de sorte que
 \[\int_ \gamma f(z) \lvert \diff z \rvert = \int_{[0,1]} f(\gamma(t)) \lvert\gamma^\prime(t)\rvert \diff t .\]
 \begin{fprop}[Inégalité triangulaire et inégalité ML]

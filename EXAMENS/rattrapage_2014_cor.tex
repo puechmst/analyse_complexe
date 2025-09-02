@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{amsart}
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\title{Fonctions de la variable complexe - Correction}
+\begin{document}
+\maketitle
+
+\section*{Exercice}
+\begin{enumerate}
+\item Soit $\mathcal{C}_r \colon t \in [0, 2\pi] \mapsto z_0 + r
+  \exp(it)$. Soit $V$ un voisinage de $z_0$ sur lequel $f$ est bornée
+  en module par un réel $M > 0$. Il existe $r_0 > 0$ tel que pour tout
+  $r \leq r_0$, le cercle $\mathcal{C}_r$ soit dans $V$. On a alors,
+  pour tout entier $n \geq 1$ et tout $u \in \mathcal{C}_r$:
+\[
+|(u-z_0)(u-z_0)^{n-1}f(u)| \leq r^n M
+\]
+Le lemme de Jordan donne:
+\[
+\lim_{r \to 0} \int_{\mathcal{C}_r} (u-z_0)^{n-1} f(u) du = 0
+\]
+Comme par ailleurs:
+\[
+ \int_{\mathcal{C}_r} (u-z_0)^{n-1} f(u) du = i 2 \pi b_n
+\]
+on a bien $b_n=0, n \geq 1$.
+\item L'application $h$ est bornée par $\epsilon^{-1}$. Elle admet
+  donc un prolongement analytique en $z_0$ en vertu de la question
+  précédente.
+\item $h$ ne peut s'annuler qu'en $z_0$. Si elle ne s'annule pas, on a
+  $f(z_0) = h(z_0)^{-1}+a$ et $z_0$ n'est pas une singularité de
+  $f$. Sinon, $h$ admet au voisinage de $z_0$ un développement de la forme:
+\[
+\sum_{n \geq p}c_n(z-z_0)^n
+\]
+avec $c_p \neq 0$. On en déduit que $(z-z_0)^ph^{-1}(z)$ est
+holomorphe au voisinage de $z_0$ et donc que $z_0$ est pôle d'ordre
+$p$ de $f$.
+\end{enumerate}
+\end{document}

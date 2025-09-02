@@ -24,7 +24,7 @@ L'ensemble des germes négligeables devant $(U,g)$ est noté $o_{x_0}(g)$.
 Il est important de bien prendre garde au fait que la notation $o$ désigne en réalité un ensemble de germes d'applications. On omet le plus souvent l'ouvert $U$ qui est implicite. \end{rem}
 \begin{fdefn}
 Soient $E,F$ deux espaces vectoriels normés sur un corps $\mathbb{K}$
- et soit $U$ un ouvert de $E$. On dira que $f \colon U \to F$ est différentiable en $x_0 \in U$ si il existe une application continue $L \colon E \to F$ et un voisinage ouvert $V$ de $x_0$ tels que:
+ et soit $U$ un ouvert de $E$. On dira que $f \colon U \to F$ est différentiable en $x_0 \in U$ si il existe une application linéaire continue $L \colon E \to F$ et un voisinage ouvert $V$ de $x_0$ tels que:
  \[
  \forall x \in U \cap V, \, f(x) = f(x_0) + L(x-x_0) + o(\|x-x_0\|_E)
  \]
@@ -955,8 +955,7 @@ L'exercice suivant permet de clarifier les points mentionnés ci-dessus.
         \item Montrer qu'il ne peut exister aucun point singulier dans la boule ouverte $B(0,R).$
         \item Montrer qu'il existe au moins un point singulier sur $\partial B(0,R) = \Bar{B}(0,R)-B(0,R).$ 
     \end{itemize}
-    Indice pour la deuxième question : on admettra la propriété suivante, qui est démontrée dans le chapitre sur les séries de Laurent : Une application holomorphe dans un domaine $\Omega$ est développable en série entière dans tout disque ouvert contenu dans $\Omega.$ 
-     
+    Pour la seconde question, on admettra la propriété suivante, qui est démontrée dans le chapitre sur les séries de Laurent : Une application holomorphe dans un domaine $\Omega$ est développable en série entière dans tout disque ouvert contenu dans $\Omega.$ 
 \end{exercice}
 
 \paragraph{Développement en série au point à l'infini.} Nous dirons qu'une fonction $f$ est analytique en $z_0=\infty$, si $g(z)=f(1/z)$ est analytique en $=0$. Ceci revient à considérer la fonction sur le plan complexe étendu $\overline{\C}$ ou encore sur la sphère de Riemann. Donc si $f$ est analytique en $\infty$, alors $g(z)$ admet le développement en série entière $g(z)=\sum_{n=0}^\infty a_n z^n$, pour $\lvert z \rvert <\rho$, où $\rho$ est le rayon de convergence de cette série. Par conséquent, $f$ admet le développement en puissance de $z$ suivant :
@@ -979,7 +978,7 @@ Nous dirons qu'un point$z_0 \in E$ est un \textbf{point isolé} de l'ensemble $E
 \begin{exem} Si $E=[-1,0] \bigcup \{1/n : n \geq 1\}$, chacun des points $1/n$ sont isolés dans $E$, à la différence des points de l'intervalle $[-1,0]$ qui ne le sont pas.
 \end{exem}
 
-Une conséquence importante de l'analycité est le résultat suivant connu sous le nom du théorème des zéros isolés :
+Une conséquence importante de l'analycité est le résultat suivant:
 \begin{fthm}(Théorème des zéros isolés)
 Si $f$ est une application analytique non identiquement nulle dans un domaine
 $\Omega$, alors les zéros de $f$ sont des points isolés.

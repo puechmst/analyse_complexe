@@ -1,0 +1,61 @@
+\documentclass[a4paper,12pt]{amsart}
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\title{Fonctions de la variable complexe \\ Correction }
+\begin{document}
+\maketitle
+
+\section*{Enoncé}
+Soit $f$ une application holomorphe de $\C$. On dit que $a$ est un zéro simple de $f$ si $f(a)=0$ et si au voisinage de $a$ on a $f(z) = (z-a) h(z)$ avec $h$ holomorphe ne s'annulant pas en $a$. 
+Dans la suite, on se donne une fonction $f$, holomorphe dans $\C$, qui a pour zéros simples les points $z_n, n \in \mathbb{N}$. On supposera que $0< |z_0|\leq |z_1| \dots \leq |z_n| \leq \dots$ et que $\lim_{n \to +\infty} |z_n| = +\infty$.
+\begin{itemize}
+\item Montrer que la fonction $g = f^\prime/f$ admet un pôle simple en chacun des points $z_n, n \in \mathbb{N}$ et que pour tout entier $n$, $\textbf{Res}_{z_n}g=1$. 
+\item On se donne une suite croissante de réels positifs $r_n$ de limite $+\infty$ et telle que pour tout $n$ le cercle $\mathcal{C}_n$ de centre 0 et de rayon $r_n$ ne passe par aucun des zéros de $f$. On suppose également qu'il existe une constante réelle $K$ telle que pour tout entier $n$, $\sup_{z \in \mathcal{C}_n} |g(z)| \leq K$.
+En utilisant le théorème des résidus,
+montrer que pour pour $u \in \C$ tel que $|u| < r_n$ et différent des $z_n, n \in \mathbb{N}$:
+\[
+\frac{1}{i 2 \pi} \int_{\mathcal{C}_n}\frac{g(z)}{z-u} dz = g(u) + \sum_{n \text{ tq } |z_n| < r_n} \frac{1}{z_n - u}
+\]
+\item En remarquant que $1/(z-u) - 1/z = u/[z(z-u)]$, montrer que l'on a:
+\[
+\frac{1}{i 2 \pi} \int_{\mathcal{C}_n}\frac{g(z)}{z-u} dz = g(0) + \sum_{n \text{ tq } |z_n| < r_n}\frac{1}{z_n} + \frac{u}{i 2 \pi}\int_{\mathcal{C}_n} \frac{g(z)}{z(z-u)} dz
+\]
+\item En déduire que pour tout $u$ différent des $z_n, n \in \mathbb{N}$:
+\[
+g(u) = g(0) + \sum_{n \in \mathbb{N}} \left(\frac{1}{u-z_n} + \frac{1}{z_n}\right)
+\]
+\textbf{Indication:} Utiliser l'hypothèse de majoration sur $g$.
+
+\end{itemize}
+\section*{Corrigé}
+\begin{itemize}
+\item Le développement en série de Laurent d'une application a un caractère local: on peut supposer que l'on travaille, pour un entier $n$ donné, dans un voisinage de $z_n$. En vertu de la définition d'un zéro simple, il existe $h$ holomorphe ne s'annulant pas en $z_n$ et $V$ voisinage de $z_n$ tels que pour tout $z$ dans $V$ on ait $f(z) = (z-z_n)h(z)$. On en déduit que dans $V$, l'application $g$ s'écrit:
+\begin{equation}
+g(z) = \frac{h(z) + (z-z_n)h^\prime(z)}{h(z)(z-z_n)} = \frac{1}{z-z_n} + \frac{h^\prime(z)}{h(z)}
+\end{equation}
+Le terme $h^\prime/h$ est holomorphe au voisinage de $z_n$, $h$ ne s'y annulant pas. Par unicité du développement en série de Laurent, on déduit de l'expression précédente que $z_n$ est pôle simple, de résidu $1$.
+\item Les hypothèses faites montrent que l'application $z \mapsto g(z)/(z-u)$ posséde des pôles simples en chacun des $z_n$, de résidu $1/(z_n-u)$, et un pôle simple en $u$ de résidu $g(u)$. le résultat démandé est une application directe du théorème des résidus. 
+\item Avec l'indication donnée, il vient:
+\begin{equation}
+\frac{1}{i 2 \pi} \int_{\mathcal{C}_n}\frac{g(z)}{z-u} dz = \frac{1}{i 2 \pi} \int_{\mathcal{C}_n}\frac{g(z)}{z} dz + 
+ \frac{1}{i 2 \pi} \int_{\mathcal{C}_n}\frac{u g(z)}{z(z-u)} dz
+\end{equation}
+Le premier terme du membre de droite peut s'écrire à l'aide de l'expression obtenue à la question précédente en posant $u = 0$, ce qui donne l'égalité demandée.
+\item Un paramétrage du cercle $\mathcal{C}_n$ est donné par l'application $t \in [0,2\pi] \mapsto r_n e^{it}$. On en déduit que:
+\begin{equation}
+\frac{u}{i 2 \pi} \int_{\mathcal{C}_n}\frac{g(z)}{z(z-u)} dz = \frac{u}{i 2 \pi} \int_0^{2\pi} \frac{g\left(r_n e^{it}
+\right)}{r_n e^{it}(r_n e^{it}-u)} i r_n e^{it} dt
+\end{equation}
+En supposant sans perte de généralité que $r_n > |u|$, et en utilisant le fait que $g$ est bornée par $M$ sur $\mathcal{C}_n$, on peut majorer l'intégrale en partie droite par:
+\begin{equation}
+\int_0^{2\pi} \frac{M}{r_n - |u|} dt = \frac{2 \pi M}{r_n -|u|}
+\end{equation}
+qui admet pour limite $0$ lorsque $n$ tend vers $+\infty$.
+\end{itemize}
+\end{document}

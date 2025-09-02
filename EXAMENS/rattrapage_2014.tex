@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{amsart}
+\usepackage[french]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\title{Fonctions de la variable complexe}
+\author{Dur\'ee 2 Heures. Sans document. Calculatrice ENAC autoris\'ee}
+\begin{document}
+\maketitle
+La rédaction des réponses devra faire appara\^itre clairement le ou les 
+théorèmes du cours employés. Les hypothèses devront \^etre soigneusement
+vérifiées.
+\section*{Cours (8pts)}
+\begin{enumerate}
+\item Donner les conditions de Cauchy pour l'holomorphie en un point $z_0$.
+\item Soit $f \colon z \mapsto \overline{z}$. $f$ peut-elle être holomorphe dans $\C$? 
+\item Quel est le résidu en 0 de l'application $z \mapsto \cos(z)/z$ ? En déduire la valeur de l'intégrale:
+\[
+\int_{\gamma} \frac{\cos(z)}{z} dz
+\]
+avec $\gamma$ le lacet $ t \in [0,1] \mapsto \exp(i 2 \pi t)$.
+\item Soit $f$ une application holomorphe dans un domaine $\Omega$ dont le bord $\partial \Omega$ est un lacet de classe $C^1$. Que vaut:
+\[
+\int_{\partial \Omega} \frac{f(z)}{(z-z_0)^2}
+\]
+\end{enumerate}
+\section*{Exercice (6pts)} 
+Soit l'application $f \colon z \mapsto \exp\left(i z^2\right)$. 
+\begin{itemize}
+  \item Montrer que $f$ est holomorphe sur $\mathbb{C}$ et vérifier que sa
+  dérivée est continue.
+  \item Pour tout réel $r > 0$, le contour $\gamma_r$ est défini selon la figure
+  \ref{fig:contour2}. Proposer une écriture de $\gamma_r$ sous la forme d'une
+  courbe de Jordan régulière de classe $C^1$ par morceaux.
+  \item Que vaut l'intégrale:
+  \[
+  \int_{\gamma_r} f(z) dz
+  \]
+  \item Écrire cette intégrale sous la forme d'une somme de trois
+  intégrales de chemin et montrer que l'intégrale correspondant à l'arc de
+  cercle tend vers 0 lorsque $r \to +\infty$.
+  \item En déduire les valeurs des intégrales généralisées suivantes, dites
+  intégrales de Fresnel:
+  \[
+  \lim_{r \to +\infty} \int_{[-r,r]} \cos(x^2) dx, \quad  \lim_{r \to +\infty}
+  \int_{[-r,r]} \sin(x^2) dx
+  \]
+\end{itemize}
+ \begin{figure}[ht]
+\includegraphics[scale=0.3]{contour_fresnel.pdf}
+\caption{Contour $\gamma_r$}\label{fig:contour2}
+\end{figure}
+\section*{Exercice (6 pts)} 
+Soit $\Omega$ un ouvert de $\mathbb{C}$ et soit $f \colon \Omega \to
+\mathbb{C}$ une application holomorphe sur $\Omega$ privé d'un point
+$z_0$. On rappelle que le développement en série de Laurent de $f$ au
+voisinage de $z_0$ s'écrit:
+\[
+f(z) = \sum_{n \geq 0}a_n (z-z_0)^n + \sum_{n \geq 1}b_n (z-z_0)^{-n}
+\]
+et que l'on a:
+\[
+b_n = \frac{1}{i2 \pi} \int_{\mathcal{C}} (u-z_0)^{n-1} f(u) du
+\]
+où $\mathcal{C}$ est un cercle de centre $z_0$, contenu dans $\Omega$
+et parcouru une fois en sens trigonométrique.
+\begin{enumerate}
+\item En utilisant le lemme de Jordan, montrer que si $f$ est bornée
+  dans un voisinage de $z_0$, tous les coefficients $b_n, n \geq 1$,
+  sont nuls dans le développement en série de Laurent. En déduire que
+  $f$ admet un prolongement analytique en $z_0$.
+\end{enumerate}
+ On suppose maintenant que $z_0$ est un point singulier essentiel
+  de $f$. Soit $V$ un voisinage de $z_0$ privé de $z_0$. On va
+  démontrer par l'absurde que l'image de $V$ par $f$ est dense dans
+  $\mathbb{C}$.
+Soient $a \in \mathbb{C}$ et $\epsilon > 0$ tels que $\forall z \in V,
+|f(z)-a| \geq \epsilon$.
+\begin{enumerate}[resume]
+\item Montrer que l'application:
+\[
+h \colon z \in V \mapsto \frac{1}{f(z)-a}
+\]
+est bornée. En déduire qu'elle admet un prolongement analytique en
+$z_0$ que l'on continuera à noter $h$.
+\item En écrivant $f(z) = h(z)^{-1}+a$, montrer que soit $f$ admet un prolongement analytique en
+  $z_0$, soit $z_0$ est un pôle de $f$. Dans les deux cas, on aboutit
+  à une contradiction de l'hypothèse selon laquelle
+  $z_0$ est point singulier essentiel. 
+\end{enumerate}
+Le théorème de densité, objet de cet exercice, s'appelle théorème de
+Casorati-Weierstrass. Un résultat beaucoup plus difficile, dû à
+Picard, montre que $f(V)$ est égal à $\mathbb{C}$, éventuellement
+privé d'un point.
+
+\end{document}

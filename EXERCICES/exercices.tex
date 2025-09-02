@@ -22,10 +22,85 @@
 \usetikzlibrary{intersections}
 \usetikzlibrary{hobby}
 
-\title{Exercices - thème résidus et transformée de Laplace}
-\setcounter{section}{5}
+\title{Questions de cours}
+\setcounter{section}{0}
 \graphicspath{{../images}}
 \begin{document}
 \maketitle
-\input{ex6.tex}
+%\input{ex6.tex}
+\section{Questions de cours}
+Les questions proposées dans ce document portent sur le cours et sont regroupées en thèmes. Lors de l'examen final, seules les questions de cette liste pouront être
+posées, avec un minium de une dans chaque thème.
+\subsection{Thème holomorphie}
+Dans cette partie, le terme domaine d'holomorphie désigne le plus grand ouvert
+dans lequel une application est holomorphe.
+\begin{enumerate}
+\item Quel est le domaine d'holomorphie de $f : z \mapsto z^4$ ?
+\item Quel est le domaine d'holomorphie de $f : z \mapsto |z|$ ?
+\item)Quel est le domaine d'holomorphie de $f : z \mapsto 1/ \cos(z)$ ?
+\item Quel est le domaine d'holomorphie de $f : z \mapsto 1/(1 + z^2 )$ ?
+\item Quel est le domaine d'holomorphie de $f : z \mapsto e^z /(1 + z^2 )$ ?
+\item L'application $z \mapsto z\overline{z}$ est-elle holomorphe en $z = 1$ ?
+\item Expliquer pourquoi l'application $z \mapsto z^2$ est holomorphe dans $\C$ et donner
+sa dérivée.
+\item Si $f, g$ sont deux applications holomorphes dans $\C$ , l'application $f.g$ est-elle
+holomorphe ? Quelle est sa dérivée ?
+\item Si $f, g$ sont deux applications holomorphes dans $\C$ , l'application composée
+$f \circ g$ est-elle holomorphe ? Quelle est sa dérivée ?
+\item Si $f, g$ sont deux applications holomorphes dans $\C$, en quels points l'appli-
+cation $f /g$ est-elle holomorphe ? Quelle est sa dérivée ?
+\end{enumerate}
+\subsection{Thème séries entières et fonctions analytiques}
+\begin{enumerate}
+\item Enoncer le critère de d'Alembert pour une série de terme général $a_n$.
+\item A l'intérieur de son disque ouvert de convergence, une application définie
+par une série entière est-elle holomorphe ? Si oui, comment exprime-t-on sa
+dérivée ?
+\item Quel est le rayon de convergence de la série $\sum_{n \geq 0} x^n / n!$ ?
+\item Quel est le rayon de convergence de la série $\sum_{n \geq 0} (-1)^n x^n / n!$ ?
+\item
+\item Énoncer le théorème des zéros isolés.
+\end{enumerate}
+\subsection{Thème formule de Cauchy}
+\begin{enumerate}
+	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto e^{it}$ . Que vaut :
+	\[
+	\int_\gamma \frac{dz}{z} \quad ?
+	\] 
+	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto e^{it}$ . Que vaut :
+	\[
+	\int_\gamma \frac{\sin z}{z} dz \quad ?
+	\] 
+	\item Soit $\gamma$ un lacet simple de classe $C^1$ . Soit $f$ une application holomorphe dans
+	$\C$ . Que vaut :
+		\[
+	\int_\gamma f(z) dz \quad ?
+	\] 
+	\item Soit  $\gamma$  un lacet simple de classe $C^1$ ne passant pas par $z_0 \in \C$ . Soit $f$ une
+	application holomorphe dans C . Que vaut :
+	\[
+\int_\gamma \frac{f(z)}{z-z_0} dz \quad ?
+\] 
+		\item Soit  $\gamma$  un lacet simple de classe $C^1$ ne passant pas par $z_0 \in \C$ . Soit $f$ une
+	application holomorphe dans C . Que vaut :
+	\[
+	\int_\gamma \frac{f(z)}{(z-z_0)^2} dz \quad ?
+	\] 
+\end{enumerate}
+\subsection{Thème série de Laurent et résidus}
+\begin{enumerate}
+	\item Donner le développement en série de Laurent de $z \mapsto e^z$ au voisinage de 0.
+	\item Donner le développement en série de Laurent de $z \mapsto 1+z+z^{-1}$ au voisinage de 0.
+	\item Enoncer le théorème des résidus.
+	\item Quel est le résidu en 0 de l'application $z \mapsto cos(z)/z$ ?
+	\item Quel est le résidu en $i$ de l'application $z \mapsto 1/(1 + z^2 )$ ?
+	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto 2e^{it}$ . Que vaut :
+\[
+\int_{\gamma} \frac{e^z}{1+z^2}dz\quad ?
+\]
+	\item Soit $\gamma$ le lacet $t \in [0, 2\pi] \mapsto 2e^{it}$ . Que vaut :
+	\[
+	\int_{\gamma} \frac{z}{1+z}dz\quad ?
+	\]
+\end{enumerate}
 \end{document}
