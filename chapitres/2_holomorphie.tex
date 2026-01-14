@@ -66,7 +66,7 @@ où $\|f^\prime(x_0)\|$ est la norme de l'application linéaire continue $f^\pri
 \end{proof}
 \begin{fprop}
   \label{prop:der_compo}
-Soient $E,F,G$ trois espaces vectoriels normés et $f \colon E \to F$,$g \colon F \to G$ deux applications. Si $f$ est différentiable en $x_0 \in E$ et $g$ 
+Soient $E,F,G$ trois espaces vectoriels normés et $f \colon E \to F$, $g \colon F \to G$ deux applications. Si $f$ est différentiable en $x_0 \in E$ et $g$ 
 est différentiable en $f(x_0)$, alors $g \circ f$ est différentiable en $x_0$ et:
 \begin{equation}
   \left( g \circ f \right)^\prime(x_0) = g^\prime\left( f(x_0) \right) \circ f^\prime(x_0)
@@ -79,7 +79,7 @@ est différentiable en $f(x_0)$, alors $g \circ f$ est différentiable en $x_0$ 
   \end{equation}
 De même, il existe un voisinage ouvert $V$ de $f(x_0)$ tel que:
   \begin{equation}
-    \forall y \in V, \, g(y) = g\left( f(x_0) \right)+ g^\prime \left( f(x_0) \right)\left( y-f(x_0) \right) + o\left( \| y - f(x_0) \| \right)
+    \forall y \in V, \, g(y) = g\left( f(x_0) \right)+ g^\prime\left( f(x_0) \right)\left( y-f(x_0) \right) + o\left( \| y - f(x_0) \| \right)
   \end{equation}
   $f$ étant dérivable en $x_0$, elle y est continue, ce qui assure l'existence d'un voisinage ouvert $W$ de $x_0$ tel que $f(W) \subset V.$ 
 Pour $x \in W$, on a donc:
@@ -529,7 +529,7 @@ de classe $C^1$ tels que $\gamma_1(0) = \gamma_2(0) = z_0.$ En posant $v_1= \gam
 \begin{equation}
   \langle f^\prime(z_0) v_1, f^\prime(z_0),v_2 \rangle = \lvert f^\prime(z_0) \rvert^2 \langle v_1, v_2 \rangle
 \end{equation}
-où la notation $\langle \cdot, \cdot, \rangle$ désigne le produit scalaire euclidien de $\R^2.$
+où la notation $\langle \cdot, \cdot \rangle$ désigne le produit scalaire euclidien de $\R^2.$
 \end{fprop}
 \begin{proof}
   Un calcul immédiat montre la propriété suivante:
@@ -795,7 +795,7 @@ correspond un nombre $R \in [0, \infty]$, tel que la série converge absolument 
 \end{center}
 \end{figure}
 
-x
+
 \begin{proof}
 On suppose que: 
 \[
@@ -833,7 +833,7 @@ existe, alors $R$ est le rayon de convergence de la série.
 \end{fprop} 
 Les opérations usuelles de combinaison linéaire et produit sont définies pour les séries entières convergentes.
 \begin{fprop}
-Soient $f \colon \sum_{n \neq 0}a_n(z-z_0)^n$ et $g \colon \sum_{n \geq 0} b_n (z-z_0)^n$ deux séries entières de rayons de convergence respectifs $r_1,r_2$. Pour tout $\lambda \in \C$, la série entière:
+Soient $f \colon z \mapsto \sum_{n \neq 0}a_n(z-z_0)^n$ et $g \colon z \mapsto \sum_{n \geq 0} b_n (z-z_0)^n$ deux séries entières de rayons de convergence respectifs $r_1,r_2$. Pour tout $\lambda \in \C$, la série entière:
 \[
 h \colon z \mapsto \sum_{n \geq 0} (\lambda a_n + b_n) (z-z_0)^n
 \]
@@ -847,7 +847,7 @@ Soit $z \in D(z_0, \inf(r_1,r_2)$. Pour tout $p \in \N$, on a:
 Les deux termes en partie de droite de l'inégalité ont une limite finie lorsque $p$ tend vers l'infini, prouvant ainsi que la série entière $h$ converge. La limite d'une série étant la limite de ses sommes partielles, on a immédiatement $h(z) = \lambda f(z) + g(z)$ par linéarité.
 \end{proof}
 \begin{fprop}
-Soient $f \colon \sum_{n \neq 0}a_n(z-z_0)^n$ et $g \colon \sum_{n \geq 0} b_n (z-z_0)^n$ deux séries entières de rayons de convergence respectifs $r_1,r_2$. 
+Soient $f \colon z \mapsto \sum_{n \neq 0}a_n(z-z_0)^n$ et $g \colon z \mapsto \sum_{n \geq 0} b_n (z-z_0)^n$ deux séries entières de rayons de convergence respectifs $r_1,r_2$. 
 Pour tout $n \geq 0$, on pose:
 \[
 c_n = \sum_{k=0}^n a_k b_{n-k}
@@ -1138,7 +1138,15 @@ Soit la série entière :
 
 \subsection{Fonction logarithme}
 
-Nous introduisons dans cette partie, la fonction logarithme complexe, en suivant l'approche de \cite{remmert1991theory}. La difficulté réside dans le fait que la fonction exponentielle $e^z$ n'est pas injective, car étant périodique de période $2 i \pi$. Elle ne peut être bijective qu'en considérant, par exemple, la bande $\{ -\pi < y <\pi\}$. 
+Nous introduisons dans cette partie, la fonction logarithme complexe, en suivant l'approche de \cite{remmert1991theory}. 
+
+Dans le cas réel, le logarithme peut être introduit de deux manières : 
+\begin{itemize} 
+\item comme l'unique primitive de $x \mapsto 1/x$ qui s'annule en 0 -- mais nous n'avons pas encore abordé le sujet des primitives dans le cas complexe, 
+\item comme la réciproque de l'application $\exp$ -- nous allons suivre cette approche 
+\end{itemize} 
+
+La difficulté réside dans le fait que la fonction exponentielle $e^z$ n'est pas injective, car étant périodique de période $2 i \pi$. Elle ne peut être bijective qu'en considérant, par exemple, la bande $\{ -\pi < y <\pi\}$. 
 
 \begin{fdefn}
 Une fonction analytique $\ell \colon  \Omega \to \C$, sur un domaine $\Omega \subset \C$, est appelée \textbf{fonction logarithme} sur $\Omega$ si $\exp(\ell( z)) = z$ pour tout $z \in \Omega$. 
